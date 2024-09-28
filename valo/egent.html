@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        table
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .total {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 230px;
+            height: 470px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 20px;
+            transition: transform 0.4s ease;
+            cursor: pointer;
+            z-index: 3;
+            position: relative;
+        }
+
+
+        .box:hover {
+            transform: scale(1.1);
+            border-radius: 40px;
+        }
+
+        .b1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 63%;
+        }
+
+        .b2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 80%;
+            height: 22%;
+            background-color: rgba(0, 0, 0, 0.253);
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .p1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            font-weight: 400;
+            height: 28px;
+            width: 90px;
+            margin: 5px;
+            border-radius: 0px 20px 0px 20px;
+
+        }
+
+        .p2 {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+
+        }
+
+        img {
+            width: 88%;
+        }
+
+        .bb {
+            width: 90%;
+
+        }
+
+        #j1 {
+            background-image: linear-gradient(360deg, rgb(40, 75, 187), rgb(38, 38, 51));
+
+        }
+
+        #j1:hover {
+            background-image: linear-gradient(360deg, rgb(13, 51, 175), rgb(129, 40, 28));
+
+        }
+
+        #j2 {
+            background-image: linear-gradient(360deg, rgb(22, 187, 118), rgb(38, 38, 51));
+
+        }
+
+        #j2:hover {
+            background-image: linear-gradient(360deg, rgb(14, 207, 127), rgb(49, 100, 19));
+
+        }
+
+        #j3 {
+            background-image: linear-gradient(360deg, rgb(216, 33, 146), rgb(38, 38, 51));
+
+        }
+
+        #j3:hover {
+            background-image: linear-gradient(360deg, rgb(173, 11, 79), rgb(161, 13, 190));
+
+        }
+
+        #j4 {
+            background-image: linear-gradient(360deg, rgb(218, 184, 35), rgb(38, 38, 51));
+
+        }
+
+        #j4:hover {
+            background-image: linear-gradient(360deg, rgb(218, 184, 35), rgba(202, 22, 218, 0.438));
+
+        }
+
+        #j5 {
+            background-image: linear-gradient(360deg, rgb(228, 197, 197), rgb(38, 38, 51));
+
+        }
+
+        #j5:hover {
+            background-image: linear-gradient(360deg, rgb(228, 197, 197), rgb(58, 111, 128));
+
+        }
+
+
+
+
+
+        #r1 {
+
+            background-image: linear-gradient(90deg, rgb(148, 148, 148), rgba(148, 148, 148, 0.37));
+
+        }
+
+        #r2 {
+
+            background-image: linear-gradient(90deg, rgb(218, 184, 35), rgba(248, 181, 37, 0.384));
+
+        }
+
+        #r3 {
+
+            background-image: linear-gradient(90deg, rgb(214, 134, 43), rgba(209, 138, 57, 0.37));
+
+        }
+
+        #r4 {
+
+            background-image: linear-gradient(90deg, rgb(18, 116, 111), rgba(25, 127, 134, 0.267));
+
+        }
+
+        #r5 {
+
+            background-image: linear-gradient(90deg, rgb(89, 63, 92), rgba(63, 19, 63, 0.61));
+            color: rgb(216, 216, 216);
+
+        }
+
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .all {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 130px;
+            height: 50px;
+            background-color: #ff4655;
+            border: none;
+            color: white;
+            font-size: 17px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 3;
+            position: relative;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #ca2d3a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="total">
+        <video autoplay muted loop playsinline>
+            <source src="./images/yuri.mp4" type="video/mp4">
+        </video>
+        <a href="./index.html" class="btn">Back</a>
+        <div class="overlay"></div>
+
+        <div class="all">
+            <div class="box" id="j2">
+                <div class="b1">
+                    <img src="./images/sk.png" alt="">
+                </div>
+                <div class="b2">
+                    <p class="p1" id="r2">#1</p>
+                    <p class="p2">OUISSI</p>
+                </div>
+            </div>
+
+            <div class="box" id="j1">
+                <div class="b1">
+                    <img src="./images/ach.webp" alt="">
+                </div>
+                <div class="b2">
+                    <p class="p1" id="r1">#2</p>
+                    <p class="p2">ACHRAF</p>
+                </div>
+            </div>
+
+
+            <div class="box" id="j3">
+                <div class="b1">
+                    <img src="./images/ou.webp" alt="" class="bb">
+                </div>
+                <div class="b2">
+                    <p class="p1" id="r3">#3</p>
+                    <p class="p2">OU-K1T</p>
+                </div>
+            </div>
+
+
+            <div class="box" id="j4">
+                <div class="b1">
+                    <img src="./images/rof.webp" alt="">
+                </div>
+                <div class="b2">
+                    <p class="p1" id="r4">#4</p>
+                    <p class="p2">ROF</p>
+                </div>
+            </div>
+
+
+            <div class="box" id="j5">
+                <div class="b1">
+                    <img src="./images/al.webp" alt="">
+                </div>
+                <div class="b2">
+                    <p class="p1" id="r5">#5</p>
+                    <p class="p2">ALI</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
